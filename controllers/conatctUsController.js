@@ -9,7 +9,6 @@ const PostContactus = async (req, res) => {
     return res.status(400).send({ error: 'All fields are required.' });
   }
 
-  // Create the data object
   const sampleContact = {
     name,
     email,
