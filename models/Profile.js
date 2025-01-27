@@ -1,36 +1,34 @@
 const mongoose = require("mongoose");
 
 const profileSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    age: { type: Number, required: true },
-    email: { type: String, required: true },
-    address: { type: String, required: true },
-    phone: { type: String, required: true },
-    profileImage: { type: String }, // Store image URL
-    skills: { type: [String] },
+    name: String,
+    title: String,
+    description: String,
+    personalInfo: {
+      age: String,
+      email: String,
+      address: String,
+      phone: String
+    },
+    skills: [String],
     workExperience: [
-        {
-            role: String,
-            company: String,
-            location: String,
-            startYear: Number,
-            endYear: Number,
-            description: String,
-        },
-    ],
-    education: [
-        {
-            degree: String,
-            institution: String,
-            yearOfPassing: Number,
-        },
+      {
+        title: String,
+        company: String,
+        location: String,
+        duration: String,
+        description: String
+      }
     ],
     lastActivities: [
-        {
-            activity: String,
-            timestamp: Date,
-        },
-    ],
-});
+      {
+        activity: String,
+        timeAgo: String
+      }
+    ]
+  });
+  
+  const Profile = mongoose.model('Profile', profileSchema);
+  
 
-module.exports = mongoose.model("Profile", profileSchema);
+module.export = Profile;
