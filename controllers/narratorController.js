@@ -20,10 +20,6 @@ const getNarrators = async (req, res) => {
         query.category = category;
     }
 
-    if (jobType) {
-        query.jobtype = jobtype;
-    }
-
     if(emptype){
         query.emptype = emptype;
     }
