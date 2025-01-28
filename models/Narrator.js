@@ -5,7 +5,7 @@ const narratorSchema = new mongoose.Schema({
         
         required: true
      },
-    empType: { type: String, 
+    emptype: { type: String, 
         required: true
      },
     experience: { type: String,
