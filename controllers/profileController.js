@@ -5,7 +5,8 @@ const Profile = require("../models/Profile")
 
 const updateProfile = async (req, res) => {
 
-    const myProfile  = { name: "Lina Jamasin",
+    
+  const myProfile  = { name: "Lina Jamasin",
     title: "Designer UI | UX",
     description: "Passionate UI/UX designer dedicated to crafting intuitive digital experiences.",
     personalInfo: {
@@ -39,8 +40,6 @@ const updateProfile = async (req, res) => {
     ],
 }
   ;
-
-
 
     try {
 
