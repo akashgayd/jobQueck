@@ -1,24 +1,28 @@
 const mongoose = require("mongoose");
 
 const narratorSchema = new mongoose.Schema({
-    title: { type: String, 
+    designation: { type: String, 
         
         required: true
      },
-    role: { type: String, 
+    empType: { type: String, 
         required: true
      },
-    rate: { type: String,
+    experience: { type: String,
          required: true
          },
     category: { type: String,
         
         required: true },
-    jobType: { type: String,
+    package: { type: String,
          required: true
          },
     location: { type: String,
          required: true 
+        },
+        companyName:{
+            type:String,
+            require:true
         },
     imageUrl: { type: String,
          required: true 

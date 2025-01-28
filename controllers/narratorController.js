@@ -2,7 +2,7 @@ const Narrator = require("../models/Narrator");
 
 
 const getNarrators = async (req, res) => {
-    const {search,category,jobType,rateMin,rateMax, page = 1, limit = 10} = req.query;
+    const {search,category,empType,rateMin,rateMax, page = 1, limit = 10} = req.query;
 
 
     // Build the query object
@@ -10,8 +10,8 @@ const getNarrators = async (req, res) => {
 
     if (search) {
         query.$or = [
-            { title: { $regex: search, $options: "i" } }, 
-            { role: { $regex: search, $options: "i" } },  
+            { designation: { $regex: search, $options: "i" } }, 
+            { category: { $regex: search, $options: "i" } },  
             { location: { $regex: search, $options: "i" } } 
         ];
     }
@@ -56,12 +56,13 @@ const getNarrators = async (req, res) => {
 // Seed a sample narrator
 const seedNarrator = async (req, res) => {
     const sampleNarrator = {
-        title: "Audiobook Narrator",
-        role: "Employer",
-        rate: 60, // Use a numeric value for rate for easier filtering
+        designation: "fullstack",
+        emptype: "fulltime",
+        experience: 60, // Use a numeric value for rate for easier filtering
         category: "Music & Audio",
-        jobType: "Freelance",
+        package: "Freelance",
         location: "New York",
+        companyName:"tcs",
         imageUrl: "https://cdn-icons-png.flaticon.com/512/25/25231.png"
     };
 
