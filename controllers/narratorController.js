@@ -2,7 +2,7 @@ const Narrator = require("../models/Narrator");
 
 
 const getNarrators = async (req, res) => {
-    const {search,category,empType,rateMin,rateMax, page = 1, limit = 10} = req.query;
+    const {search,category,emptype,rateMin,rateMax, page = 1, limit = 10} = req.query;
 
 
     // Build the query object
@@ -21,9 +21,12 @@ const getNarrators = async (req, res) => {
     }
 
     if (jobType) {
-        query.jobType = jobType;
+        query.jobtype = jobtype;
     }
 
+    if(emptype){
+        query.emptype = emptype;
+    }
     if (rateMin || rateMax) {
         const rateFilter = {};
         if (rateMin) rateFilter.$gte = parseFloat(rateMin);
