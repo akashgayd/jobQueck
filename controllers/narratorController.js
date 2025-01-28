@@ -58,7 +58,7 @@ const seedNarrator = async (req, res) => {
     const sampleNarrator = {
         designation: "fullstack",
         emptype: "fulltime",
-        experience: 60, // Use a numeric value for rate for easier filtering
+        experience: "6 year", 
         category: "Music & Audio",
         package: "Freelance",
         location: "New York",
